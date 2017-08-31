@@ -1,0 +1,85 @@
+html {
+    box-sizing: 'border-box';
+}
+
+body {
+    background-image: url('theJoker.jpg');
+    background-size: cover;
+}
+
+.center {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+img {
+    display: inline;
+    width: 200px;
+    height: 100px;
+}
+
+#headers {
+    color: white;
+}
+
+#footer {
+    width: 100%;
+    border-top: solid 2px black;
+    background-color: rgba(255,255,255,.70);
+    position: fixed;
+    bottom: 0;
+}
+
+#myName {
+    padding: 35px;
+}
+
+#player-input {
+    margin: 0 auto 0 auto;
+    width: 160px;
+    height: 160px;
+    border-radius: 25%;
+    font-size: 50px;
+    background-color: rgba(243, 249, 245, 0.40);
+}
+
+#submit {
+    width: 60px;
+    height: 60px;
+    border-radius: 25%;
+    position: absolute;
+    top: 110px;
+    left: 110px;
+}
+
+#input-parent {
+    width: 160px;
+    margin: 5% auto 50px;
+    position: relative;
+}
+
+.guess {
+    display: inline;
+    font-size: 75px;
+    border: 1px solid black;
+    padding: 0 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px black;
+    background-color: rgba(243, 249, 245, 0.40);
+}
+
+#menu-btns {
+    padding: 25px;
+}
+
+#app {
+    width: 60%;
+    margin: 50px auto;
+    background-color: rgba(43, 39, 39, 0.50);
+}
