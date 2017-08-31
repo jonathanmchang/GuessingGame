@@ -38,12 +38,19 @@ img {
     padding: 35px;
 }
 
+#input-parent {
+    width: 160px;
+    margin: 5% auto 50px;
+    position: relative;
+    border-radius: 25%;
+}
+
 #player-input {
-    margin: 0 auto 0 auto;
     width: 160px;
     height: 160px;
-    border-radius: 25%;
     font-size: 50px;
+    border-radius: 25%;
+    
     background-color: rgba(243, 249, 245, 0.40);
 }
 
@@ -56,11 +63,6 @@ img {
     left: 110px;
 }
 
-#input-parent {
-    width: 160px;
-    margin: 5% auto 50px;
-    position: relative;
-}
 
 .guess {
     display: inline;
