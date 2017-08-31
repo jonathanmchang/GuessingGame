@@ -130,8 +130,8 @@ $(document).ready(function() {
     $('#hint').click(function() {
         let hint = game.provideHint()
         $('h1').text("Here's a Hint!")
-        $('h3').text("The winning number is " + hint[0] + ', ' + hint[1] + ', or ' + hint[2] + '.')
-        // $('h3').text('Stop Cheating, Rachel!!!!')
+        // $('h3').text("The winning number is " + hint[0] + ', ' + hint[1] + ', or ' + hint[2] + '.')
+        $('h3').text('Stop Cheating, Rachel!!!!')
         $('#hint').prop('disabled', true)
     })
     $('#reset').click(function() {
