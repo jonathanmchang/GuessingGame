@@ -19,16 +19,6 @@ function Game() {
     this.winningNumber = generateWinningNumber()
 }
 
-Game.prototype.guessDisplay = function() {
-    this.pastGuessesDisp = this.pastGuesses.map(function(num){
-        if (num < 10) {
-            return '0' + num
-        } else {
-            return num
-        }
-    })
-}
-
 Game.prototype.difference = function() {
     this.diff = this.playersGuess - this.winningNumber
     if (this.diff >= 0) {
@@ -52,6 +42,21 @@ Game.prototype.playersGuessSubmission = function(num) {
     return this.checkGuess()
 }
 
+Game.prototype.guessDisplay = function () {
+    this.pastGuessesDisp = this.pastGuesses.map(function (num) {
+        if (num < 10) {
+            return '0' + num
+        } else {
+            return num
+        }
+    })
+}
+
+Game.prototype.winningPhrases = function () {
+    let winPhrase = ['Winner, Winner, Chicken Dinner!', 'You Win!', 'Victory!', 'Success!']
+    return winPhrase[Math.floor(Math.random() * winPhrase.length)]
+}
+
 Game.prototype.checkGuess = function() {
     if (this.playersGuess === this.winningNumber) {
         this.pastGuesses.push(this.playersGuess)
@@ -61,7 +66,7 @@ Game.prototype.checkGuess = function() {
         $('#guess3').text(this.pastGuessesDisp[2])
         $('#guess4').text(this.pastGuessesDisp[3])
         $('#guess5').text(this.pastGuessesDisp[4])
-        $('h1').text('YOU WIN!')
+        $('h1').text(this.winningPhrases())
         $('h3').text('Press the Reset Button to play again!')
         $('player-input').text(this.winningNumber)
         $('#hint, #submit, #player-input').prop("disabled", true)
