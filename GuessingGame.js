@@ -59,7 +59,11 @@ Game.prototype.checkGuess = function() {
         $('h3').text('Try another number!')
         return 'You have already guessed that number.'
     } else {
-        this.pastGuesses.push(this.playersGuess)
+        if (this.playersGuess < 10) {
+            this.pastGuesses.push('0' + this.playersGuess)
+        } else {
+            this.pastGuesses.push(this.playersGuess)
+        }
         $('#guess1').text(this.pastGuesses[0])
         $('#guess2').text(this.pastGuesses[1])
         $('#guess3').text(this.pastGuesses[2])
@@ -67,7 +71,7 @@ Game.prototype.checkGuess = function() {
         $('#guess5').text(this.pastGuesses[4])
     }
     if (this.pastGuesses.length === 5) {
-        $('h1').text('You Lose!')
+        $('h1').text('You Lose! The Number was ' + this.winningNumber + ".")
         $('h3').text('Better Luck Next Time!')
         $('#hint, #submit, #player-input').prop("disabled", true)
         return 'You Lose.'
@@ -138,7 +142,7 @@ $(document).ready(function() {
         game = newGame()
         $('h1').text('Play the Guessing Game!')
         $('h3').text('Pick a number between 1 - 100')
-        $('.guess').text('-')
+        $('.guess').text('--')
         $('#hint, #submit, #player-input').prop("disabled", false)
 
     })
