@@ -61,11 +61,12 @@ Game.prototype.checkGuess = function() {
     if (this.playersGuess === this.winningNumber) {
         this.pastGuesses.push(this.playersGuess)
         this.guessDisplay()
-        $('#guess1').text(this.pastGuessesDisp[0])
-        $('#guess2').text(this.pastGuessesDisp[1])
-        $('#guess3').text(this.pastGuessesDisp[2])
-        $('#guess4').text(this.pastGuessesDisp[3])
-        $('#guess5').text(this.pastGuessesDisp[4])
+        $('#guesses a:nth-child(' + this.pastGuessesDisp.length + ')').text(this.pastGuessesDisp[this.pastGuessesDisp.length-1]);
+        // $('#guess1').text(this.pastGuessesDisp[0])
+        // $('#guess2').text(this.pastGuessesDisp[1])
+        // $('#guess3').text(this.pastGuessesDisp[2])
+        // $('#guess4').text(this.pastGuessesDisp[3])
+        // $('#guess5').text(this.pastGuessesDisp[4])
         $('h1').text(this.winningPhrases())
         $('h3').text('Press the Reset Button to play again!')
         $('player-input').text(this.winningNumber)
@@ -78,11 +79,13 @@ Game.prototype.checkGuess = function() {
     } else {
         this.pastGuesses.push(this.playersGuess)
         this.guessDisplay()
-        $('#guess1').text(this.pastGuessesDisp[0])
-        $('#guess2').text(this.pastGuessesDisp[1])
-        $('#guess3').text(this.pastGuessesDisp[2])
-        $('#guess4').text(this.pastGuessesDisp[3])
-        $('#guess5').text(this.pastGuessesDisp[4])
+        $('#guesses a:nth-child(' + this.pastGuessesDisp.length + ')').text(this.pastGuessesDisp[this.pastGuessesDisp.length - 1]);
+
+        // $('#guess1').text(this.pastGuessesDisp[0])
+        // $('#guess2').text(this.pastGuessesDisp[1])
+        // $('#guess3').text(this.pastGuessesDisp[2])
+        // $('#guess4').text(this.pastGuessesDisp[3])
+        // $('#guess5').text(this.pastGuessesDisp[4])
     }
     if (this.pastGuesses.length === 5) {
         $('h1').text('You Lose! The Number was ' + this.winningNumber + ".")
