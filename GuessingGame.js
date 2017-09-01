@@ -15,7 +15,18 @@ function shuffle(arr) {
 function Game() {
     this.playersGuess = null
     this.pastGuesses = []
+    this.pastGuessesDisp = []
     this.winningNumber = generateWinningNumber()
+}
+
+Game.prototype.guessDisplay = function() {
+    this.pastGuessesDisp = this.pastGuesses.map(function(num){
+        if (num < 10) {
+            return '0' + num
+        } else {
+            return num
+        }
+    })
 }
 
 Game.prototype.difference = function() {
@@ -44,11 +55,12 @@ Game.prototype.playersGuessSubmission = function(num) {
 Game.prototype.checkGuess = function() {
     if (this.playersGuess === this.winningNumber) {
         this.pastGuesses.push(this.playersGuess)
-        $('#guess1').text(this.pastGuesses[0])
-        $('#guess2').text(this.pastGuesses[1])
-        $('#guess3').text(this.pastGuesses[2])
-        $('#guess4').text(this.pastGuesses[3])
-        $('#guess5').text(this.pastGuesses[4])
+        this.guessDisplay()
+        $('#guess1').text(this.pastGuessesDisp[0])
+        $('#guess2').text(this.pastGuessesDisp[1])
+        $('#guess3').text(this.pastGuessesDisp[2])
+        $('#guess4').text(this.pastGuessesDisp[3])
+        $('#guess5').text(this.pastGuessesDisp[4])
         $('h1').text('YOU WIN!')
         $('h3').text('Press the Reset Button to play again!')
         $('player-input').text(this.winningNumber)
@@ -60,11 +72,12 @@ Game.prototype.checkGuess = function() {
         return 'You have already guessed that number.'
     } else {
         this.pastGuesses.push(this.playersGuess)
-        $('#guess1').text(this.pastGuesses[0])
-        $('#guess2').text(this.pastGuesses[1])
-        $('#guess3').text(this.pastGuesses[2])
-        $('#guess4').text(this.pastGuesses[3])
-        $('#guess5').text(this.pastGuesses[4])
+        this.guessDisplay()
+        $('#guess1').text(this.pastGuessesDisp[0])
+        $('#guess2').text(this.pastGuessesDisp[1])
+        $('#guess3').text(this.pastGuessesDisp[2])
+        $('#guess4').text(this.pastGuessesDisp[3])
+        $('#guess5').text(this.pastGuessesDisp[4])
     }
     if (this.pastGuesses.length === 5) {
         $('h1').text('You Lose! The Number was ' + this.winningNumber + ".")

@@ -55,6 +55,14 @@ img {
     background-color: rgba(243, 249, 245, 0.40);
 }
 
+#test {
+    border-radius: 25%;
+}
+
+.containertest {
+    border-radius: 25%;
+}
+
 #submit {
     width: 60px;
     height: 60px;
