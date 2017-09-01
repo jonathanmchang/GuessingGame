@@ -43,7 +43,11 @@ Game.prototype.playersGuessSubmission = function(num) {
 
 Game.prototype.checkGuess = function() {
     if (this.playersGuess === this.winningNumber) {
-        this.pastGuesses.push(this.playersGuess)
+        if (this.playersGuess < 10) {
+            this.pastGuesses.push('0' + this.playersGuess)
+        } else {
+            this.pastGuesses.push(this.playersGuess)
+        }
         $('#guess1').text(this.pastGuesses[0])
         $('#guess2').text(this.pastGuesses[1])
         $('#guess3').text(this.pastGuesses[2])
