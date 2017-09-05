@@ -55,6 +55,10 @@ img {
     background-color: rgba(243, 249, 245, 0.40);
 }
 
+#player-input:focus {
+    outline: none;
+}
+
 
 #submit {
     width: 60px;
